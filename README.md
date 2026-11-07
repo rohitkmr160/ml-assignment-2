@@ -15,7 +15,7 @@ Build and compare five machine-learning classifiers that predict whether a breas
 ## 3. GitHub Repository Link
 https://github.com/rohitkmr160/ml-assignment-2
 
-Live Streamlit app: STREAMLIT_LINK_HERE
+Live Streamlit app: https://rohitkumar-2026aj05332-ml-assignment2.streamlit.app
 
 ## 4. Models Used
 Logistic Regression, Decision Tree (max_depth=5), K-Nearest Neighbors (k=5), Gaussian Naive Bayes, Support Vector Machine (RBF kernel). All were trained on the same training split and evaluated on the same test split.
