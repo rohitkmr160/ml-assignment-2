@@ -53,11 +53,13 @@ st.sidebar.header("Controls")
 uploaded = st.sidebar.file_uploader("Upload test data (CSV)", type="csv")
 model_name = st.sidebar.selectbox("Select model", list(MODEL_FILES.keys()))
 
-if uploaded is None:
-    st.info("Upload `test_data.csv` from the repository using the sidebar to begin.")
-    st.stop()
-
-df = pd.read_csv(uploaded)
+if uploaded is not None:
+    df = pd.read_csv(uploaded)
+    st.success(f"Using uploaded file: {uploaded.name}")
+else:
+    df = pd.read_csv("test_data.csv")
+    st.info("Showing results on the default `test_data.csv` from the repository. "
+            "Upload your own test CSV in the sidebar to replace it.")
 if TARGET not in df.columns:
     st.error(f"The uploaded CSV must contain the target column '{TARGET}'.")
     st.stop()
